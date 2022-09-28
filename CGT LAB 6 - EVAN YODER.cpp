@@ -9,8 +9,8 @@ using namespace sf;
 using namespace std;
 
 int main() {
-	string background = "images1/backgrounds/winter.png";
-	string foreground = "images1/characters/yoda.png";
+	string background = "images1/backgrounds/prague.png";
+	string foreground = "images1/characters/rey_green_screen.png";
 
 	Texture backgroundTex;
 	if (!backgroundTex.loadFromFile(background)) {
