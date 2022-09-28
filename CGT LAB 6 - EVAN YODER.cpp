@@ -38,10 +38,11 @@ int main() {
 				Color c = foregroundImage.getPixel(x, y);
 				Color foregroundColor(c.r, c.g, c.b);
 
-				Color d = backgroundImage.getPixel(x, y);
-				Color backgroundColor(d.r, d.g, d.b);
-
-				backgroundImage.setPixel(x, y, foregroundColor);
+				if (pixColor == foregroundImage.getPixel(x,y)) {
+					Color backgroundColor = backgroundImage.getPixel(x,y);
+					foregroundImage.setPixel(x, y, backgroundColor);
+					
+				}
 
 				
 
