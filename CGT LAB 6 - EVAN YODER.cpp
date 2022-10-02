@@ -9,8 +9,9 @@ using namespace sf;
 using namespace std;
 
 int main() {
+
 	string background = "images1/backgrounds/prague.png";
-	string foreground = "images1/characters/rey_green_screen.png";
+	string foreground = "images1/characters/yoda.png";
 
 	Texture backgroundTex;
 	if (!backgroundTex.loadFromFile(background)) {
@@ -30,21 +31,23 @@ int main() {
 
 	Vector2u sz = backgroundImage.getSize();
 
+	Color pixColor(32, 214, 23);
+
 
 	for (int y = 0; y < sz.y; y++) {
 		for (int x = 0; x < sz.x; x++) {
 			// These two loops will run the code inside for each pixel in the background image
 				// You can access the current pixel at x,y like so:
-				Color c = foregroundImage.getPixel(x, y);
-				Color foregroundColor(c.r, c.g, c.b);
+			Color c = foregroundImage.getPixel(x, y);
+			Color foregroundColor(c.r, c.g, c.b);
 
-				if (pixColor == foregroundImage.getPixel(x,y)) {
-					Color backgroundColor = backgroundImage.getPixel(x,y);
-					foregroundImage.setPixel(x, y, backgroundColor);
-					
-				}
+			if (pixColor == foregroundImage.getPixel(x, y)) {
+				Color backgroundColor = backgroundImage.getPixel(x, y);
+				foregroundImage.setPixel(x, y, backgroundColor);
 
-				
+			}
+
+
 
 
 
@@ -52,7 +55,7 @@ int main() {
 			// Color objects store the individual channel values like example.r example.gand example.b
 		}
 	}
-	backgroundTex.loadFromImage(backgroundImage);
+
 
 	// By default, just show the foreground image
 	RenderWindow window(VideoMode(1024, 768), "Here's the output");
@@ -65,4 +68,5 @@ int main() {
 	window.display();
 	while (true);
 }
+
 
